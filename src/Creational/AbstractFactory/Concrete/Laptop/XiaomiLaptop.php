@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Ramil\ScratchPhpPatterns\Creational\AbstractFactory\Concrete;
+namespace Ramil\ScratchPhpPatterns\Creational\AbstractFactory\Concrete\Laptop;
 
 use Ramil\ScratchPhpPatterns\Creational\AbstractFactory\Interface\Laptop;
 

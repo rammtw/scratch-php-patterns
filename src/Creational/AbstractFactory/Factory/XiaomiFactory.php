@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Ramil\ScratchPhpPatterns\Creational\AbstractFactory\Factory;
 
+use Ramil\ScratchPhpPatterns\Creational\AbstractFactory\Concrete\Laptop\XiaomiLaptop;
+use Ramil\ScratchPhpPatterns\Creational\AbstractFactory\Concrete\Phone\XiaomiPhone;
+use Ramil\ScratchPhpPatterns\Creational\AbstractFactory\Concrete\TV\XiaomiTV;
 use Ramil\ScratchPhpPatterns\Creational\AbstractFactory\Interface;
 
 final class XiaomiFactory implements Factory

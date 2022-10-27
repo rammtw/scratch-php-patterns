@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Ramil\ScratchPhpPatterns\Creational\AbstractFactory;
+namespace Ramil\ScratchPhpPatterns\Creational\AbstractFactory\Concrete\Phone;
 
 use Ramil\ScratchPhpPatterns\Creational\AbstractFactory\Interface\Phone;
 

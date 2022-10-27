@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Ramil\ScratchPhpPatterns\Creational\AbstractFactory\Factory;
 
+use Ramil\ScratchPhpPatterns\Creational\AbstractFactory\Concrete\Laptop\SamsungLaptop;
+use Ramil\ScratchPhpPatterns\Creational\AbstractFactory\Concrete\Phone\SamsungPhone;
+use Ramil\ScratchPhpPatterns\Creational\AbstractFactory\Concrete\TV\SamsungTV;
 use Ramil\ScratchPhpPatterns\Creational\AbstractFactory\Interface;
-use Ramil\ScratchPhpPatterns\Creational\AbstractFactory\SamsungLaptop;
-use Ramil\ScratchPhpPatterns\Creational\AbstractFactory\SamsungPhone;
-use Ramil\ScratchPhpPatterns\Creational\AbstractFactory\SamsungTV;
 
 final class SamsungFactory implements Factory
 {

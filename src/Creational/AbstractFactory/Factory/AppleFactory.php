@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Ramil\ScratchPhpPatterns\Creational\AbstractFactory\Factory;
 
-use Ramil\ScratchPhpPatterns\Creational\AbstractFactory\AppleLaptop;
-use Ramil\ScratchPhpPatterns\Creational\AbstractFactory\ApplePhone;
-use Ramil\ScratchPhpPatterns\Creational\AbstractFactory\AppleTV;
+use Ramil\ScratchPhpPatterns\Creational\AbstractFactory\Concrete\Laptop\AppleLaptop;
+use Ramil\ScratchPhpPatterns\Creational\AbstractFactory\Concrete\Phone\ApplePhone;
+use Ramil\ScratchPhpPatterns\Creational\AbstractFactory\Concrete\TV\AppleTV;
 use Ramil\ScratchPhpPatterns\Creational\AbstractFactory\Interface;
 
 final class AppleFactory implements Factory

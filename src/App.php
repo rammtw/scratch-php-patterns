@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Ramil\ScratchPhpPatterns;
 
+use Ramil\ScratchPhpPatterns\Creational\AbstractFactory;
+use Ramil\ScratchPhpPatterns\Creational\AbstractFactory;
+use Ramil\ScratchPhpPatterns\Creational\AbstractFactory;
 use Ramil\ScratchPhpPatterns\Creational\FactoryMethod\Parser;
 
 class App
@@ -31,5 +34,18 @@ class App
         };
 
         $parser->process();
+    }
+
+    private function abstractFactoryRun(): void
+    {
+        $factory = match ('apple') {
+            'apple' => new Factory\AppleFactory(),
+            'xiaomi' => new XiaomiFactory(),
+            'samsung' => new SamsungFactory(),
+        };
+
+        $factory->createPhone();
+        $factory->createTV();
+        $factory->createLaptop();
     }
 }

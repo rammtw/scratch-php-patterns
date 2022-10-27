@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace Ramil\ScratchPhpPatterns;
 
+use Ramil\ScratchPhpPatterns\Creational\AbstractFactory\Factory;
 use Ramil\ScratchPhpPatterns\Creational\FactoryMethod\Parser;
 
 class App
 {
     public function run(): string
     {
-        $this->factoryMethodRun();
+        $this->abstractFactoryRun();
 
         return '';
     }
@@ -31,5 +32,20 @@ class App
         };
 
         $parser->process();
+    }
+
+    private function abstractFactoryRun(): void
+    {
+        $factory = match ('apple') {
+            'apple' => new Factory\AppleFactory(),
+            'xiaomi' => new Factory\XiaomiFactory(),
+            'samsung' => new Factory\SamsungFactory(),
+        };
+
+        $factory->createPhone();
+        $factory->createTV();
+        $factory->createLaptop();
+
+        var_dump($factory);
     }
 }

@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Ramil\ScratchPhpPatterns\Creational\Builder;
 
 class ResumeBuilder implements ResumeBuilderInterface
@@ -14,9 +12,7 @@ class ResumeBuilder implements ResumeBuilderInterface
     }
 
     public function reset(): void
-    {
-        $this->resume = new \stdClass();
-    }
+    {$this->resume = new \stdClass();}
 
     public function setFirstName(string $firstName): void
     {

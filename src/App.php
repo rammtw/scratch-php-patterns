@@ -5,13 +5,16 @@ declare(strict_types=1);
 namespace Ramil\ScratchPhpPatterns;
 
 use Ramil\ScratchPhpPatterns\Creational\AbstractFactory\Factory;
+use Ramil\ScratchPhpPatterns\Creational\Builder;
 use Ramil\ScratchPhpPatterns\Creational\FactoryMethod\Parser;
 
 class App
 {
     public function run(): string
     {
-        $this->abstractFactoryRun();
+//        $this->factoryMethodRun();
+//        $this->abstractFactoryRun();
+        $this->builderRun();
 
         return '';
     }
@@ -47,7 +50,14 @@ class App
         $laptop = $factory->createLaptop();
 
         $phone->call();
-        var_dump($tv->getInch());
-        var_dump($laptop->hasMiniJack());
+        dump($tv->getInch());
+        dump($laptop->hasMiniJack());
+    }
+
+    private function builderRun(): void
+    {
+        $builder = new Builder\Director();
+        $resume = $builder->constructResume(new Builder\ResumeBuilder());
+        dump($resume);
     }
 }

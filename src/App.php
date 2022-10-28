@@ -42,10 +42,12 @@ class App
             'samsung' => new Factory\SamsungFactory(),
         };
 
-        $factory->createPhone();
-        $factory->createTV();
-        $factory->createLaptop();
+        $phone = $factory->createPhone();
+        $tv = $factory->createTV();
+        $laptop = $factory->createLaptop();
 
-        var_dump($factory);
+        $phone->call();
+        var_dump($tv->getInch());
+        var_dump($laptop->hasMiniJack());
     }
 }

@@ -8,6 +8,7 @@ use Ramil\ScratchPhpPatterns\Creational\AbstractFactory\Factory;
 use Ramil\ScratchPhpPatterns\Creational\Builder;
 use Ramil\ScratchPhpPatterns\Creational\FactoryMethod\Parser;
 use Ramil\ScratchPhpPatterns\Creational\Prototype;
+use Ramil\ScratchPhpPatterns\Creational\Singleton\Singleton;
 
 class App
 {
@@ -16,7 +17,8 @@ class App
 //        $this->factoryMethodRun();
 //        $this->abstractFactoryRun();
 //        $this->builderRun();
-        $this->prototypeRun();
+//        $this->prototypeRun();
+        $this->singletonRun();
     }
 
     /**
@@ -71,6 +73,11 @@ class App
         dump($resume);
     }
 
+    /**
+     * Прототип
+     *
+     * @return void
+     */
     private function prototypeRun(): void
     {
         $prototype = new Prototype\Prototype();
@@ -82,5 +89,22 @@ class App
         $clonedPrototype->someScalar = 415;
 
         dump($prototype, $clonedPrototype);
+    }
+
+    /**
+     * Одиночка
+     *
+     * @return void
+     */
+    private function singletonRun(): void
+    {
+        $object = Singleton::getInstance();
+        $object2 = Singleton::getInstance();
+
+        if ($object === $object2) {
+            echo 'Singleton works';
+        } else {
+            echo 'Singleton failed';
+        }
     }
 }

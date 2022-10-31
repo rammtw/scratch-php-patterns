@@ -7,20 +7,20 @@ namespace Ramil\ScratchPhpPatterns;
 use Ramil\ScratchPhpPatterns\Creational\AbstractFactory\Factory;
 use Ramil\ScratchPhpPatterns\Creational\Builder;
 use Ramil\ScratchPhpPatterns\Creational\FactoryMethod\Parser;
+use Ramil\ScratchPhpPatterns\Creational\Prototype;
 
 class App
 {
-    public function run(): string
+    public function run(): void
     {
 //        $this->factoryMethodRun();
 //        $this->abstractFactoryRun();
-        $this->builderRun();
-
-        return '';
+//        $this->builderRun();
+        $this->prototypeRun();
     }
 
     /**
-     * Паттерн абстрактный метод
+     * Абстрактный метод
      *
      * @return void
      */
@@ -37,6 +37,11 @@ class App
         $parser->process();
     }
 
+    /**
+     * Абстрактная фабрика
+     *
+     * @return void
+     */
     private function abstractFactoryRun(): void
     {
         $factory = match ('apple') {
@@ -54,10 +59,28 @@ class App
         dump($laptop->hasMiniJack());
     }
 
+    /**
+     * Строитель
+     *
+     * @return void
+     */
     private function builderRun(): void
     {
         $builder = new Builder\Director();
         $resume = $builder->constructResume(new Builder\ResumeBuilder());
         dump($resume);
+    }
+
+    private function prototypeRun(): void
+    {
+        $prototype = new Prototype\Prototype();
+        $prototype->component = new Prototype\Component('some_value', 'The message.');
+        $prototype->someScalar = 245;
+
+        $clonedPrototype = clone $prototype;
+        $clonedPrototype->component = new Prototype\Component('cloned_some_value', 'The cloned message.');
+        $clonedPrototype->someScalar = 415;
+
+        dump($prototype, $clonedPrototype);
     }
 }

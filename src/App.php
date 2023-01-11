@@ -9,6 +9,9 @@ use Ramil\ScratchPhpPatterns\Creational\Builder;
 use Ramil\ScratchPhpPatterns\Creational\FactoryMethod\Parser;
 use Ramil\ScratchPhpPatterns\Creational\Prototype;
 use Ramil\ScratchPhpPatterns\Creational\Singleton\Singleton;
+use Ramil\ScratchPhpPatterns\Structural\Adapter\Adapter;
+use Ramil\ScratchPhpPatterns\Structural\Adapter\Client;
+use Ramil\ScratchPhpPatterns\Structural\Adapter\Service;
 
 class App
 {
@@ -18,7 +21,8 @@ class App
 //        $this->abstractFactoryRun();
 //        $this->builderRun();
 //        $this->prototypeRun();
-        $this->singletonRun();
+//        $this->singletonRun();
+        $this->adapterRun();
     }
 
     /**
@@ -106,5 +110,12 @@ class App
         } else {
             echo 'Singleton failed';
         }
+    }
+
+    private function adapterRun(): void
+    {
+        $client = new Client();
+
+        $client->run(new Adapter(new Service()));
     }
 }
